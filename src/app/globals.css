@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Inter:wght@400;500;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;800&display=swap");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,4 +26,29 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.btn_black {
+  width: 87px;
+  height: 44px;
+  border-radius: 16px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+}
+.btn_white {
+  width: 97px;
+  height: 44px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
 }
