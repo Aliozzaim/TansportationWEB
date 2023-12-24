@@ -1,10 +1,14 @@
+import React from "react";
+import Router from "./router/index.jsx";
 import "./index.css";
+
+// !! import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
-    <div className=" bg-black mx-auto my-0 flex justify-center max-w-[390px]">
-      hello
-    </div>
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>
   );
 }
 
