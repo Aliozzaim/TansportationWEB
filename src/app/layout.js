@@ -4,7 +4,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Header from "../components/Header";
-
+import Footer from "../components/Footer";
+import Onboard from "./Onboard";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
@@ -23,8 +24,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <Header />
-        {children}
+        <div className="max-w-[1440px] mx-auto px-[7rem] pt-23px ">
+          <Header />
+          {children}
+          <Onboard />
+          <Footer />
+        </div>
       </body>
     </html>
   );

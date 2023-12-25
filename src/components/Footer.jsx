@@ -1,86 +1,69 @@
-// "use client";
-// import Image from "next/image";
-// import Link from "next/link";
-// import messagesImage from "../../public/assets/images/messages.png";
-// import homeImage from "../../public/assets/images/home.png";
-// import profileImage from "../../public/assets/images/profile.png";
-// import truckImage from "../../public/assets/images/truck.png";
-// import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import HeaderIcon from "../../public/assets/images/truck.svg";
 
-// const Footer = () => {
-//   const isAuthenticated = true;
-//   const [activeLink, setActiveLink] = useState(null);
+const Footer = () => {
+  return (
+    <footer className="border-t border-solid border-gray-700 py-[36px] bg-[#1A1A1A]">
+      <div className="max-w-[942px] flex justify-start pl-[2rem] gap-[9rem] footer_t1">
+        <div className="w-1/4">
+          <a href="/">
+            <Image src={HeaderIcon} alt="apple" />
+          </a>
+          <p className="mt-[24px] opacity-50 ">
+            Nakilport 2023<br></br>Tüm hakları saklıdır
+          </p>
+        </div>
+        <div className="flex justify-between w-full">
+          <ul className="flex flex-col gap-4">
+            <li>
+              <a className="opacity-50 " href="#">
+                Hakkımızda
+              </a>
+            </li>
+            <li>
+              <a href="#">Gizlilik Sözleşmesi</a>
+            </li>
+            <li>
+              <a href="#">Bize Ulaşın</a>
+            </li>
+            <li>
+              <a href="#">Kullanıcı Sözleşmesi</a>
+            </li>
+          </ul>
+          <ul className="flex items-start flex-col gap-4">
+            <li>
+              <a className="opacity-50 " href="#">
+                Sosyal Medya
+              </a>
+            </li>
+            <li>
+              <a href="#">Instagram</a>
+            </li>
+            <li>
+              <a href="#">Twitter</a>
+            </li>
+            <li>
+              <a href="#">Linkedin</a>
+            </li>
+          </ul>
+          <ul className="flex items-start flex-col gap-4 ">
+            <li>
+              <a className="opacity-50 " href="#">
+                Şimdi Yükle
+              </a>
+            </li>
+            <li>
+              <a href="#">Google Play</a>
+            </li>
+            <li>
+              <a href="#">App Store</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-//   const handleLinkClick = (link) => {
-//     setActiveLink(link);
-//   };
-
-//   return (
-//     isAuthenticated && (
-//       <nav className=" ">
-//         <div className="footer bg-black">
-//           <div>
-//             <Link href="/" passHref legacyBehavior>
-//               <a
-//                 className={` ${activeLink === "home" ? "text-[#FF6438]" : ""}`}
-//                 onClick={() => handleLinkClick("home")}
-//               >
-//                 <Image src={homeImage} alt="Home" width={24} height={24} />
-//                 Anasayfa
-//               </a>
-//             </Link>
-//           </div>
-//           <div>
-//             <Link href="/offer" passHref legacyBehavior>
-//               <a
-//                 className={` ${activeLink === "offer" ? "text-[#FF6438]" : ""}`}
-//                 onClick={() => handleLinkClick("offer")}
-//               >
-//                 <Image
-//                   src={truckImage}
-//                   alt="Teklifler"
-//                   width={24}
-//                   height={24}
-//                 />
-//                 <span>Teklifler</span>
-//               </a>
-//             </Link>
-//           </div>
-//           <div>
-//             <Link href="/messages" passHref legacyBehavior>
-//               <a
-//                 className={` ${
-//                   activeLink === "messages" ? "text-[#FF6438]" : ""
-//                 }`}
-//                 onClick={() => handleLinkClick("messages")}
-//               >
-//                 <Image
-//                   src={messagesImage}
-//                   alt="Mesajlar"
-//                   width={24}
-//                   height={24}
-//                 />
-//                 <span>Mesajlar</span>
-//               </a>
-//             </Link>
-//           </div>
-//           <div>
-//             <Link href="/profile" passHref legacyBehavior>
-//               <a
-//                 className={` ${
-//                   activeLink === "profile" ? "text-[#FF6438]" : ""
-//                 }`}
-//                 onClick={() => handleLinkClick("profile")}
-//               >
-//                 <Image src={profileImage} alt="Profil" width={24} height={24} />
-//                 Profil21
-//               </a>
-//             </Link>
-//           </div>
-//         </div>
-//       </nav>
-//     )
-//   );
-// };
-
-// export default Footer;
+export default Footer;

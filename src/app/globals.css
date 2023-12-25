@@ -28,27 +28,57 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.btn_black {
-  width: 87px;
-  height: 44px;
-  border-radius: 16px;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: DM Sans;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  text-align: center;
+.header_button {
+  display: flex;
+  border-radius: 2rem;
+  background: #1a1a1a;
+
+  justify-content: center;
+  align-items: center;
+  width: 9.5rem;
+  height: 48px;
+  border-radius: 32px;
+  gap: 12px;
 }
-.btn_white {
-  width: 97px;
-  height: 44px;
-  border-radius: 16px;
-  background-color: #ffffff;
-  color: #000000;
-  font-family: DM Sans;
+/* Typography css */
+.header_t1 {
+  font-family: "DM Sans";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  opacity: 0.5;
+}
+.header_t1 {
+  font-family: "DM Sans";
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  text-align: center;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+}
+.footer_t1 {
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+/* footer */
+
+.footer {
+  border: 5px solid #ff0000;
+}
+
+/* hero */
+
+/*onboard*/
+.dmsans40016 {
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
 }
