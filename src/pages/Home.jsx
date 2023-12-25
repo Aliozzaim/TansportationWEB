@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../app/components/Footer.jsx";
+
 const HomePage = () => {
   return (
     <div className="bg-black-50 mx-auto my-0 flex justify-center ">
