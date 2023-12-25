@@ -37,13 +37,13 @@ const Onboard = () => {
       <div className="hero flex justify-between xl:flex-row  max-xl:flex-col  max-xl:items-center  ">
         <div className="dssams70072 mt-[4.5rem] hero_t1  max-xl:text-center">
           <span>
-            SORUNSUZ <span class="text-[#FF6438]">TAŞIMA DENEYİMİNİZ </span>
+            SORUNSUZ <span className="text-[#FF6438]">TAŞIMA DENEYİMİNİZ </span>
             İÇİN
           </span>
           <br />
           <span>BİRLİKTE ÇALIŞALIM</span>
         </div>
-        <div class="max-w-[24.875rem] rounded-2xl bg-[#1A1A1A] px-[1.875rem] pt-9 mt-[82px]  ">
+        <div className="max-w-[24.875rem] rounded-2xl bg-[#1A1A1A] px-[1.875rem] pt-9 mt-[82px]  ">
           <div>
             <h4 className="dssams40018">Hoş geldiniz!</h4>
             <h6 className="mt-[8px] dssams40014 opacity-50">

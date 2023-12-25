@@ -4,7 +4,7 @@ import HeaderIcon from "../../public/assets/images/truck.svg";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-solid border-gray-700 py-[36px] bg-[#1A1A1A]">
+    <footer className="border-t border-solid border-gray-700 py-[36px] bg-[#1A1A1A] rounded-b-2xl">
       <div className="max-w-[942px] flex justify-start pl-[2rem] gap-[9rem] footer_t1">
         <div className="w-1/4">
           <a href="/">
