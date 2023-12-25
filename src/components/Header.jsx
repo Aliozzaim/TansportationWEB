@@ -27,7 +27,7 @@ const Header = () => {
   };
   return (
     <header>
-      <div className="flex   justify-between items-center px-[4.5rem] py-[1.5rem]">
+      <div className="flex   justify-between items-center px-[4.5rem] py-[1.5rem] max-xl:px-[1rem]">
         <a href="/">
           <Image src={headerICON} alt="header-icon" />
         </a>

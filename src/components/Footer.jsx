@@ -47,7 +47,7 @@ const Footer = () => {
               <a href="#">Linkedin</a>
             </li>
           </ul>
-          <ul className="flex items-start flex-col gap-4 ">
+          <ul className="flex items-start flex-col gap-4 mr-4 ">
             <li>
               <a className="opacity-50 " href="#">
                 Şimdi Yükle

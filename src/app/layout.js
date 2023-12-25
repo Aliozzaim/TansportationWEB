@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <div className="max-w-[1440px] mx-auto px-[7rem] pt-23px ">
           <Header />
           {children}
