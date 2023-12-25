@@ -7,7 +7,6 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSignup = () => {
-    // Validate inputs
     if (
       username === "" ||
       email === "" ||
@@ -22,9 +21,6 @@ export default function Signup() {
       alert("Passwords do not match");
       return;
     }
-
-    // Perform signup logic here
-    // ...
   };
 
   return (

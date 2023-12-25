@@ -95,6 +95,7 @@ body {
 
   color: #ffffff;
 }
+
 .dssams70072 {
   font-size: 72px;
   font-weight: 700;
@@ -143,7 +144,16 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  opacity: 0.5;
+}
+.dmsams50016 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+}
+.dmsans70024 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
 }
 .advantage_card {
   width: 275px;

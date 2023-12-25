@@ -20,6 +20,7 @@ const Onboard = () => {
   const handleVerification = () => {
     if (phoneNumber.trim() === "") {
       setIsPhoneNumberError(true);
+
       return;
     }
 
@@ -110,7 +111,7 @@ const Onboard = () => {
           <div className="advantage_card  py-[31px] pl-[1.5rem] ">
             <h4 className="dmsans70036 opacity-50">02</h4>
             <p className="dmsans70026 mt-[8px]">Pick up delivery</p>
-            <p className="dmsans50014 mt-2">
+            <p className="dmsans50014 mt-2 opacity-50">
               Tüm lojistik ihtiyaçlarınıza özel
               <br /> çözümler üretiyoruz
             </p>
@@ -119,7 +120,7 @@ const Onboard = () => {
             <div className="advantage_card  py-[31px] pl-[1.5rem] ">
               <h4 className="dmsans70036 opacity-50">03</h4>
               <p className="dmsans70026 mt-[8px]">24h online chat</p>
-              <p className="dmsans50014 mt-2">
+              <p className="dmsans50014 mt-2 opacity-50">
                 Tüm lojistik ihtiyaçlarınıza özel
                 <br /> çözümler üretiyoruz
               </p>
@@ -127,7 +128,7 @@ const Onboard = () => {
             <div className="advantage_card  py-[31px] pl-[1.5rem]  ">
               <h4 className="dmsans70036 opacity-50">04</h4>
               <p className="dmsans70026 mt-[8px]">Mobile app GPS</p>
-              <p className="dmsans50014  mt-2">
+              <p className="dmsans50014  mt-2 opacity-50">
                 Tüm lojistik ihtiyaçlarınıza özel <br />
                 çözümler üretiyoruz
               </p>

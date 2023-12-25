@@ -2,10 +2,11 @@
 
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Onboard from "./Onboard";
+import CreateProfileCard from "../components/CreateProfileCard";
 
 export default function RootLayout({ children }) {
   return (
@@ -24,10 +25,13 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div className="max-w-[1440px] mx-auto px-[7rem] pt-23px ">
-          <Header />
-          {children}
-          <Onboard />
-          <Footer />
+          <PrimeReactProvider>
+            <Header />
+            {children}
+            {/* <Onboard /> */}
+            <CreateProfileCard />
+            <Footer />
+          </PrimeReactProvider>
         </div>
       </body>
     </html>
