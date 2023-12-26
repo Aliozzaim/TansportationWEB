@@ -2,8 +2,10 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import CameraSVG from "../../public/assets/images/Camera.svg";
-import UseTextInput from "../components/atoms/TestInput";
+import UseTextInput from "./atoms/TextInput";
 import UserProfile from "../../public/assets/images/userProfile.svg";
+import { redirect } from "next/navigation";
+
 const CreateProfileCard = () => {
   const [file, setFile] = useState(null);
   const fileInput = useRef(null);
@@ -16,6 +18,12 @@ const CreateProfileCard = () => {
     const selectedFile = e.target.files[0];
     console.log(selectedFile);
     setFile(selectedFile);
+  };
+  const onclickHandler = () => {
+    console.log(userName);
+    //redirect user to the home page
+    redirect("/home");
+    //if user is not logged in redirect to login page
   };
 
   return (
@@ -52,10 +60,13 @@ const CreateProfileCard = () => {
           image={UserProfile}
           onValueChange={handleUserName}
         />
+        <button
+          onClick={onclickHandler}
+          className="btn_primary !max-w-[18.75rem] !h-[50px] rounded-2xl dmsans50016 mt-6"
+        >
+          Tamamla
+        </button>
       </div>
-      <button className="btn_primary !max-w-[18.75rem] !h-[50px] !rounded-full dmsans50016 mt-6">
-        Tamamla
-      </button>
     </div>
   );
 };

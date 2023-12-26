@@ -31,7 +31,7 @@ const UseTextInput = ({ placeholder, image, onValueChange }) => {
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
-        className="outline-none border-none bg-[#222222] dmsans40016 text-start ml-[50px] w-fullrounded-r-[32px]"
+        className="outline-none border-none bg-[#222222] dmsans40016 text-start ml-[50px] w-11/12 rounded-r-[32px]"
       />
     </div>
   );
