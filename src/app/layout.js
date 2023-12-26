@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Onboard from "./Onboard";
 import CreateProfileCard from "../components/CreateProfileCard";
-
+import SideNavigation from "../components/SideNavigation.jsx";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -29,7 +29,8 @@ export default function RootLayout({ children }) {
             <Header />
             {children}
             {/* <Onboard /> */}
-            <CreateProfileCard />
+            {/* <CreateProfileCard /> */}
+            <SideNavigation />
             <Footer />
           </PrimeReactProvider>
         </div>

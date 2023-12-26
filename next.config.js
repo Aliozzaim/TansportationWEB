@@ -6,3 +6,8 @@ module.exports = withFonts({
     return config;
   },
 });
+module.exports = {
+  images: {
+    domains: ["picsum.photos"],
+  },
+};

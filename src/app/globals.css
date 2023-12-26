@@ -82,6 +82,11 @@ body {
   font-weight: 400;
   line-height: 21px;
 }
+.dmsans40012 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
 
 .dssams40014 {
   font-size: 14px;
@@ -117,6 +122,20 @@ body {
   border-radius: 16px;
   color: #ffffff;
   transition: all 0.3s ease, transform 0.2s ease-out;
+}
+.btn_outline_black {
+  width: 250px;
+  height: 50px;
+  background: #1c1c1c;
+
+  border-radius: 16px;
+}
+.btn_outline_black:hover {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+
+  transition: all 0.3s ease, transform 0.2s ease-out;
+  transform: scale(0.99);
+  color: #ffffff;
 }
 
 .btn_primary:hover {
@@ -180,5 +199,60 @@ body {
   @media (max-width: 1400px) {
     justify-content: center;
     padding-right: 32px;
+  }
+}
+
+.nav_button #nav-item {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  height: 100% !important;
+}
+.nav_button:hover #nav-link {
+  color: #ff6438;
+}
+
+.nav_button #nav-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav_button #nav-item::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #ff6438;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav_button #nav-item:hover::after {
+  width: 50%;
+  left: 20%;
+}
+
+.nav_button #nav-item {
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+.nav_button #nav-item:active {
+  transform: translateX(50%);
+}
+
+.nav_button #nav-item.clicked {
+  animation: moveInRight 300ms ease-out;
+}
+
+@keyframes moveInRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(60%);
   }
 }
