@@ -77,6 +77,11 @@ body {
 /* hero */
 
 /*onboard*/
+.dmsans40013 {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+}
 .dmsans40016 {
   font-size: 16px;
   font-weight: 400;
@@ -178,6 +183,12 @@ body {
   font-weight: 500;
   line-height: 21px;
 }
+.dmsans4001114 {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
 .dmsans70024 {
   font-size: 24px;
   font-weight: 700;
