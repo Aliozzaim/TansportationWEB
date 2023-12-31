@@ -9,6 +9,7 @@ import Onboard from "./Onboard";
 import CreateProfileCard from "../components/CreateProfileCard";
 import SideNavigation from "../components/SideNavigation.jsx";
 import Home from "../pages/Home.jsx";
+import ConfirmationCard from "@/components/atoms/ConfirmationCard";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -29,10 +30,10 @@ export default function RootLayout({ children }) {
           <PrimeReactProvider>
             <Header />
             {children}
-            {/* <Onboard /> */}
+            <Onboard />
             {/* <CreateProfileCard /> */}
-            <Home />
-            <SideNavigation />
+            {/* <Home /> */}
+            {/* <SideNavigation /> */}
 
             <Footer />
           </PrimeReactProvider>

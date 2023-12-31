@@ -2,11 +2,13 @@
 import React, { useState } from "react";
 import { redirect } from "next/navigation";
 import PhoneSVG from "../../public/assets/images/call.svg";
+import ConfirmationCard from "../components/atoms/ConfirmationCard.jsx";
+import auth from "./firebase/firebase-config";
 
 const Onboard = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isPhoneNumberError, setIsPhoneNumberError] = useState(false);
-
+  const [isCardVisible, setIsCardVisible] = useState(false);
   const handlePhoneNumberChange = (e) => {
     setPhoneNumber(e.target.value);
     setIsPhoneNumberError(false);
@@ -22,19 +24,26 @@ const Onboard = () => {
       setIsPhoneNumberError(true);
 
       return;
+    } else {
+      toggleCardVisibility();
     }
-
     const isPhoneNumberInDatabase = true;
-
     if (isPhoneNumberInDatabase) {
       redirect("/home");
     } else {
       redirect("/createProfile");
     }
   };
-
+  const toggleCardVisibility = () => {
+    setIsCardVisible(!isCardVisible);
+  };
   return (
     <>
+      <ConfirmationCard
+        isVisible={isCardVisible}
+        phoneNumber={phoneNumber}
+        toggleVisibility={toggleCardVisibility}
+      />
       <div className="hero flex justify-between xl:flex-row  max-xl:flex-col  max-xl:items-center  ">
         <div className="dssams70072 mt-[4.5rem] hero_t1  max-xl:text-center">
           <span>
