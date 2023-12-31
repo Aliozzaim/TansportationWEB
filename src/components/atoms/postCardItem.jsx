@@ -5,8 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import StarSVG from "../../../public/assets/images/star.svg";
 const postCardItem = (props) => {
-  const { image, price, commentNumber, commentValue, postDescription, trip } =
-    props?.post?.post;
+  const {
+    image,
+    price,
+    commentNumber,
+    commentValue,
+    destination1,
+    destination2,
+    postDescription,
+  } = props?.post?.post;
   console.log(props.post.post);
   return (
     <Link href={props.post.url || "onclik"}>
@@ -32,7 +39,11 @@ const postCardItem = (props) => {
           </div>
           <div className="mt-[10px]">
             <p className="dmsans50014">{postDescription}</p>
-            <p className="dmsans40013 opacity-50 mt-[6px]">{trip}</p>
+            <p className="dmsans40013 opacity-50 mt-[6px]">
+              {destination1}
+              {" > "}
+              {destination2}
+            </p>
           </div>
         </div>
       </div>
