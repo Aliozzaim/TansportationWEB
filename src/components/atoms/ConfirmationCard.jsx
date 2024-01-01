@@ -15,13 +15,16 @@ const ConfirmationCard = (props) => {
   const [resendDisabled, setResendDisabled] = useState(false);
 
   const SetUpRecaptcha = () => {
-    window.recaptchaVerifier = new RecaptchaVerifier("recaptcha-container", {
-      size: "invisible",
-      callback: (response) => {
-        onSignInSubmit();
-      },
-      appVerificationDisabledForTesting: true,
-    });
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      auth,
+      "recaptcha-container",
+      {
+        size: "invisible",
+        callback: (response) => {
+          onSignInSubmit();
+        },
+      }
+    );
   };
 
   const onSignInSubmit = () => {
@@ -46,7 +49,6 @@ const ConfirmationCard = (props) => {
     try {
       SetUpRecaptcha();
       onSignInSubmit();
-
       setResendDisabled(true);
       const intervalId = setInterval(() => {
         setRemainingTime((prevTime) => {

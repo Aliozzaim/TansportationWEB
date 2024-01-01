@@ -30,10 +30,10 @@ export default function RootLayout({ children }) {
           <PrimeReactProvider>
             <Header />
             {children}
-            {/* <Onboard /> */}
+            <Onboard />
             {/* <CreateProfileCard /> */}
-            <Home />
-            <SideNavigation />
+            {/* <Home /> */}
+            {/* <SideNavigation /> */}
 
             <Footer />
           </PrimeReactProvider>
