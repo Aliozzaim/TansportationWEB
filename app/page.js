@@ -1,44 +1,47 @@
-"use client";
-import React, { useState } from "react";
-import { redirect } from "next/navigation";
-import PhoneSVG from "../../public/assets/images/call.svg";
-import ConfirmationCard from "../components/atoms/ConfirmationCard.jsx";
-import auth from "./firebase/firebase-config";
+"use client"
+import React, { useState } from "react"
+import { redirect } from "next/navigation"
+import PhoneSVG from "../public/assets/images/call.svg"
+import ConfirmationCard from "./components/atoms/ConfirmationCard.jsx"
+import auth from "./firebase/firebase-config"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
-const Onboard = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [isPhoneNumberError, setIsPhoneNumberError] = useState(false);
-  const [isCardVisible, setIsCardVisible] = useState(false);
+const Page = () => {
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [isPhoneNumberError, setIsPhoneNumberError] = useState(false)
+  const [isCardVisible, setIsCardVisible] = useState(false)
   const handlePhoneNumberChange = (e) => {
-    setPhoneNumber(e.target.value);
-    setIsPhoneNumberError(false);
-  };
+    setPhoneNumber(e.target.value)
+    setIsPhoneNumberError(false)
+  }
 
   const handleKeyDown = (e) => {
     if (!/^\d+$/.test(e.key) && e.key !== "Backspace" && e.key !== "Delete") {
-      e.preventDefault();
+      e.preventDefault()
     }
-  };
+  }
   const handleVerification = () => {
     if (phoneNumber.trim() === "") {
-      setIsPhoneNumberError(true);
+      setIsPhoneNumberError(true)
 
-      return;
+      return
     } else {
-      toggleCardVisibility();
+      toggleCardVisibility()
     }
-    const isPhoneNumberInDatabase = true;
+    const isPhoneNumberInDatabase = true
     if (isPhoneNumberInDatabase) {
-      redirect("/home");
+      redirect("/home")
     } else {
-      redirect("/createProfile");
+      redirect("/createProfile")
     }
-  };
+  }
   const toggleCardVisibility = () => {
-    setIsCardVisible(!isCardVisible);
-  };
+    setIsCardVisible(!isCardVisible)
+  }
   return (
     <>
+      <Header />
       <ConfirmationCard
         isVisible={isCardVisible}
         phoneNumber={phoneNumber}
@@ -155,8 +158,9 @@ const Onboard = () => {
           <button className="btn_secondary !w-[232px]">Uygulamayı indir</button>
         </div>
       </div>
+      <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Onboard;
+export default Page

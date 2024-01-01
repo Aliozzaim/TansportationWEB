@@ -1,15 +1,8 @@
 // pages/layout.js
 
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Onboard from "./Onboard";
-import CreateProfileCard from "../components/CreateProfileCard";
-import SideNavigation from "../components/SideNavigation.jsx";
-import Home from "../pages/Home.jsx";
-import ConfirmationCard from "@/components/atoms/ConfirmationCard";
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api"
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -27,18 +20,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div className="max-w-[1440px] mx-auto px-[7rem] pt-23px ">
-          <PrimeReactProvider>
-            <Header />
-            {children}
-            <Onboard />
-            {/* <CreateProfileCard /> */}
-            {/* <Home /> */}
-            {/* <SideNavigation /> */}
-
-            <Footer />
-          </PrimeReactProvider>
+          <PrimeReactProvider>{children}</PrimeReactProvider>
         </div>
       </body>
     </html>
-  );
+  )
 }

@@ -1,18 +1,18 @@
-"use client";
-import React, { useState } from "react";
-import { Dialog } from "primereact/dialog";
-import ReactCodeInput from "react-code-input";
-import auth from "../../app/firebase/firebase-config.js";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+"use client"
+import React, { useState } from "react"
+import { Dialog } from "primereact/dialog"
+import ReactCodeInput from "react-code-input"
+import auth from "../../firebase/firebase-config.js"
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth"
 
 const ConfirmationCard = (props) => {
-  const { phoneNumber } = props;
-  const [visible, setVisible] = useState(false);
-  const [verificationCode, setVerificationCode] = useState("");
-  const [confirmationResult, setConfirmationResult] = useState(null);
-  const [confirmation, setConfirmation] = useState(null);
-  const [remainingTime, setRemainingTime] = useState(59);
-  const [resendDisabled, setResendDisabled] = useState(false);
+  const { phoneNumber } = props
+  const [visible, setVisible] = useState(false)
+  const [verificationCode, setVerificationCode] = useState("")
+  const [confirmationResult, setConfirmationResult] = useState(null)
+  const [confirmation, setConfirmation] = useState(null)
+  const [remainingTime, setRemainingTime] = useState(59)
+  const [resendDisabled, setResendDisabled] = useState(false)
 
   const SetUpRecaptcha = () => {
     window.recaptchaVerifier = new RecaptchaVerifier(
@@ -21,57 +21,57 @@ const ConfirmationCard = (props) => {
       {
         size: "invisible",
         callback: (response) => {
-          onSignInSubmit();
+          onSignInSubmit()
         },
       }
-    );
-  };
+    )
+  }
 
   const onSignInSubmit = () => {
-    let appVerifier = window.recaptchaVerifier;
+    let appVerifier = window.recaptchaVerifier
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
-        setConfirmationResult(confirmationResult);
-        const code = window.prompt("Enter OTP");
+        setConfirmationResult(confirmationResult)
+        const code = window.prompt("Enter OTP")
         confirmationResult
           .confirm(code)
           .then((result) => {
-            const user = result.user;
-            console.log("user", user);
+            const user = result.user
+            console.log("user", user)
           })
-          .catch((error) => {});
+          .catch((error) => {})
       })
       .catch((error) => {
-        console.error(error);
-      });
-  };
+        console.error(error)
+      })
+  }
   const handleSendCode = async () => {
     try {
-      SetUpRecaptcha();
-      onSignInSubmit();
-      setResendDisabled(true);
+      SetUpRecaptcha()
+      onSignInSubmit()
+      setResendDisabled(true)
       const intervalId = setInterval(() => {
         setRemainingTime((prevTime) => {
           if (prevTime === 1) {
-            clearInterval(intervalId);
-            setResendDisabled(false);
+            clearInterval(intervalId)
+            setResendDisabled(false)
           }
-          return prevTime - 1;
-        });
-      }, 1000);
+          return prevTime - 1
+        })
+      }, 1000)
     } catch (error) {
-      console.error("Error sending code:", error);
+      console.error("Error sending code:", error)
     }
-  };
+  }
 
   const handleVerifyCode = async () => {
     try {
-      await confirmationResult.confirm(verificationCode);
-      console.log("Phone number verified!");
+      await confirmationResult.confirm(verificationCode)
+      console.log("Phone number verified!")
     } catch (error) {
-      console.error("Error verifying code:", error);
+      console.error("Error verifying code:", error)
     }
-  };
+  }
   const inputElementStyle = {
     className: "dmsans70024",
     inputStyle: {
@@ -90,7 +90,7 @@ const ConfirmationCard = (props) => {
       border: "none",
       outline: "none",
     },
-  };
+  }
 
   return (
     <div className="w-[398px]  rounded-[32px] bg-[#1A1A1A] pl-[30px] pt-[36px] ">
@@ -143,7 +143,7 @@ const ConfirmationCard = (props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ConfirmationCard;
+export default ConfirmationCard
