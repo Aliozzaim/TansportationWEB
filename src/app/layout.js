@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
             {/* <Onboard /> */}
             {/* <CreateProfileCard /> */}
             <Home />
-            {/* <SideNavigation /> */}
+            <SideNavigation />
 
             <Footer />
           </PrimeReactProvider>

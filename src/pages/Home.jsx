@@ -9,8 +9,8 @@ const HomePage = () => {
   //feche posts data from api
 
   const [posts, setPosts] = useState([]);
-  const [selectedCity1, setSelectedCity1] = useState("");
-  const [selectedCity2, setSelectedCity2] = useState("");
+  const [selectedCity1, setSelectedCity1] = useState(""); //nereden
+  const [selectedCity2, setSelectedCity2] = useState(""); //nereye
   const [sortType, setSortType] = useState("");
   const sortOptions = [
     { name: "Fiyat" },
@@ -104,7 +104,7 @@ const HomePage = () => {
   const dummyData = async () => {
     try {
       const response = await fetch(
-        "https://picsum.photos/v2/list?page=1&limit=10"
+        "https://picsum.photos/v2/list?page=1&limit=5"
       );
       const data = await response.json();
 
@@ -165,28 +165,30 @@ const HomePage = () => {
   // }, []);
 
   const sortedPosts = [...posts];
-  if (sortType === " Fiyat") {
-    sortedPosts.sort((a, b) => a.post.price - b.post.price);
+  if (sortType === "Fiyat") {
+    sortedPosts.sort((a, b) => b.post.price - a.post.price);
   } else if (sortType === "En ucuz") {
     sortedPosts.sort((a, b) => a.post.price - b.post.price);
   } else if (sortType === "Yorum Sayısına Göre") {
     sortedPosts.sort((a, b) => b.post.commentNumber - a.post.commentNumber);
   }
   return (
-    <div className="bg-black-50 mx-auto my-0 flex justify-center !max-w-[1020px]   ">
-      {/* <div className="flex flex-row flex-wrap justify-between gap-[14px] ">
+    <div className="bg-black-50 mx-auto my-0  !max-w-[1020px]   ">
+      <div>
         <p className="mb-[16px]">Öne çıkan ilanlar</p>
-        {posts.map((post) => (
-          <PostCardItem key={post.id} post={post} />
-        ))}
-      </div> */}
+        <div className="flex flex-row flex-wrap justify-between gap-[14px] ">
+          {posts.map((post) => (
+            <PostCardItem key={post.id} post={post} />
+          ))}
+        </div>
+      </div>
       <div>
         <div className="mb-[16px]">
           <p className="mb-[16px] dmsans70024">Filtrele</p>
           <div className="card flex justify-content-center gap-2 ">
             <div className="relative">
               <select
-                className="h-[40px] py-[11px] w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px] pr-4"
+                className="h-[40px]  py-[11px] w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px] pr-4"
                 value={sortType}
                 onChange={(e) => setSortType(e.target.value)}
               >
@@ -200,9 +202,7 @@ const HomePage = () => {
                 </option>
                 {sortOptions.map((option) => (
                   <option
-                    className={`dmsans50014 h-[40px] text-center w-[97px] ${
-                      sortType === option.name ? "text-end" : "text-center"
-                    }`}
+                    className={`dmsans50014 h-[40px] text-center w-[97px] `}
                     key={option.name}
                     value={option.name}
                   >
