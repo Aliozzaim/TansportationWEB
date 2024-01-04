@@ -115,12 +115,45 @@ body {
   font-weight: 400;
   line-height: 21px;
 }
+.dmsans70014 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
 .dmsans40012 {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
 }
 
+.custom-background {
+  background: linear-gradient(0deg, #222222, #222222),
+    linear-gradient(0deg, #2c2c2c, #2c2c2c);
+  background-size: 50%, 50%;
+  background-position: 0% 0%, 100% 0%;
+  background-repeat: no-repeat;
+}
+.dmsans40016 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #ffffff;
+}
+.dmsans50012 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.dmsans50013 {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 17px;
+}
+.dmsans40014 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
 .dssams40014 {
   font-size: 14px;
   font-weight: 400;

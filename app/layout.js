@@ -1,8 +1,8 @@
 // pages/layout.js
 
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api"
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -24,5 +24,5 @@ export default function RootLayout({ children }) {
         </div>
       </body>
     </html>
-  )
+  );
 }
