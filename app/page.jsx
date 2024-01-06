@@ -5,6 +5,7 @@ import PhoneSVG from "../public/assets/images/call.svg"
 import ConfirmationCard from "./components/atoms/ConfirmationCard.jsx"
 import auth from "./firebase/firebase-config"
 import FooterPartial from "./components/FooterPartial"
+import Modal from "./components/atoms/Modal"
 
 const Page = () => {
   const [phoneNumber, setPhoneNumber] = useState("")
@@ -40,11 +41,14 @@ const Page = () => {
   }
   return (
     <>
-      {/* <ConfirmationCard
-        isVisible={isCardVisible}
-        phoneNumber={phoneNumber}
-        toggleVisibility={toggleCardVisibility}
-      /> */}
+      <Modal isVisible={true} onClose={() => setShowModal(false)}>
+        <ConfirmationCard
+          isVisible={isCardVisible}
+          phoneNumber={phoneNumber}
+          toggleVisibility={toggleCardVisibility}
+        />
+      </Modal>
+
       <div className="flex justify-between xl:flex-row  max-xl:flex-col  max-xl:items-center">
         <div className="text-[72px] font-[700] leading-[94px] mt-[4.5rem]  max-xl:text-center">
           <span>

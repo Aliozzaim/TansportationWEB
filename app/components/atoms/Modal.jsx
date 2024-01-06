@@ -9,7 +9,7 @@ export default function modal({ isVisible, onClose, children }) {
   if (!isVisible) return null
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm flex justify-center items-center"
+      className="fixed z-50 inset-0 bg-black bg-opacity-20 backdrop-blur-sm flex justify-center items-center"
       id="wrapper"
       onClick={closeHandler}
     >
