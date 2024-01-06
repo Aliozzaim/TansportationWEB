@@ -7,10 +7,8 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
 const ConfirmationCard = (props) => {
   const { phoneNumber } = props;
-  const [visible, setVisible] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
   const [confirmationResult, setConfirmationResult] = useState(null);
-  const [confirmation, setConfirmation] = useState(null);
   const [remainingTime, setRemainingTime] = useState(59);
   const [resendDisabled, setResendDisabled] = useState(false);
 
@@ -119,7 +117,7 @@ const ConfirmationCard = (props) => {
     <div className="w-[398px]  rounded-[32px] bg-[#1A1A1A] pl-[30px] pt-[36px] ">
       <div className="card flex justify-content-center ">
         <div className=" items-start">
-          <p className="dmsans40018">6 haneli kod</p>
+          <p className="dmsans40018 text-white">6 haneli kod</p>
           <p className="dmsans40016 opacity-50 mt-2">
             Doğrulama kodunuz {phoneNumber} <br /> adresine başarıyla gönderildi
           </p>

@@ -1,52 +1,53 @@
-"use client"
-import React, { useState } from "react"
-import { redirect } from "next/navigation"
-import PhoneSVG from "../public/assets/images/call.svg"
-import ConfirmationCard from "./components/atoms/ConfirmationCard.jsx"
-import auth from "./firebase/firebase-config"
-import FooterPartial from "./components/FooterPartial"
-import Modal from "./components/atoms/Modal"
+"use client";
+import React, { useState } from "react";
+import { redirect } from "next/navigation";
+import PhoneSVG from "../public/assets/images/call.svg";
+import ConfirmationCard from "./components/atoms/ConfirmationCard.jsx";
+import auth from "./firebase/firebase-config";
+import FooterPartial from "./components/FooterPartial";
+import Modal from "./components/atoms/Modal";
 
 const Page = () => {
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [isPhoneNumberError, setIsPhoneNumberError] = useState(false)
-  const [isCardVisible, setIsCardVisible] = useState(false)
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [isPhoneNumberError, setIsPhoneNumberError] = useState(false);
+  const [isCardVisible, setIsCardVisible] = useState(false);
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
+
   const handlePhoneNumberChange = (e) => {
-    setPhoneNumber(e.target.value)
-    setIsPhoneNumberError(false)
-  }
+    setPhoneNumber(e.target.value);
+    setIsPhoneNumberError(false);
+  };
 
   const handleKeyDown = (e) => {
     if (!/^\d+$/.test(e.key) && e.key !== "Backspace" && e.key !== "Delete") {
-      e.preventDefault()
+      e.preventDefault();
     }
-  }
+  };
   const handleVerification = () => {
     if (phoneNumber.trim() === "") {
-      setIsPhoneNumberError(true)
+      setIsPhoneNumberError(true);
 
-      return
+      return;
     } else {
-      toggleCardVisibility()
+      setIsVisibleModal(true);
     }
-    const isPhoneNumberInDatabase = true
+    const isPhoneNumberInDatabase = true;
     if (isPhoneNumberInDatabase) {
-      redirect("/home")
+      redirect("/home");
     } else {
-      redirect("/createProfile")
+      redirect("/createProfile");
     }
-  }
+  };
   const toggleCardVisibility = () => {
-    setIsCardVisible(!isCardVisible)
-  }
+    setIsCardVisible(!isCardVisible);
+  };
+  const closeModal = () => {
+    setIsVisibleModal(false);
+  };
   return (
     <>
-      <Modal isVisible={true} onClose={() => setShowModal(false)}>
-        <ConfirmationCard
-          isVisible={isCardVisible}
-          phoneNumber={phoneNumber}
-          toggleVisibility={toggleCardVisibility}
-        />
+      <Modal isVisible={isVisibleModal} onClose={closeModal}>
+        <ConfirmationCard phoneNumber={phoneNumber} />
       </Modal>
 
       <div className="flex justify-between xl:flex-row  max-xl:flex-col  max-xl:items-center">
@@ -180,7 +181,7 @@ const Page = () => {
         <FooterPartial />
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
