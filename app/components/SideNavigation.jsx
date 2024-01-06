@@ -38,7 +38,7 @@ const SideNavigation = () => {
   //         profilePhoto: "https://picsum.photos/200",
   //     });
   return (
-    <nav className="mt-[55px] mb-[123px] w-[250px]">
+    <nav className="mt-[55px] sticky container left-30 z-50">
       <ul className="w-[250px] h-[182px]  flex-col rounded-2xl bg-[#1C1C1C] ">
         <button
           onClick={() => handleLinkClick("/home")}
@@ -438,7 +438,7 @@ const SideNavigation = () => {
         </button>
       </ul>
     </nav>
-  );
+  )
 };
 
 export default SideNavigation;

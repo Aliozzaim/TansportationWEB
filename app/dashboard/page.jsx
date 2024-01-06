@@ -173,9 +173,9 @@ const HomePage = () => {
     sortedPosts.sort((a, b) => b.post.commentNumber - a.post.commentNumber)
   }
   return (
-    <div className="bg-black-50 mx-auto my-0  !max-w-[1020px]   ">
+    <div className="">
       <div>
-        <p className="mb-[16px]">Öne çıkan ilanlar</p>
+        <p className="mb-[16px] text-xl font-[500]">Öne çıkan ilanlar</p>
         <div className="flex flex-row flex-wrap justify-between gap-[14px] ">
           {posts.map((post) => (
             <PostCardItem key={post.id} post={post} />

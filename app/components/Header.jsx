@@ -26,8 +26,8 @@ const Header = () => {
     }
   };
   return (
-    <header>
-      <div className="flex   justify-between items-center px-[4.5rem] py-[1.5rem] max-xl:px-[1rem]">
+    <header className="bg-[#141414] sticky z-50 top-0 container">
+      <nav className="flex justify-between items-center mx-auto pr-[3rem] py-[1rem]">
         <a href="/">
           <Image src={headerICON} alt="header-icon" />
         </a>
@@ -53,9 +53,9 @@ const Header = () => {
             </div>
           </a>
         </div>
-      </div>
+      </nav>
     </header>
-  );
+  )
 };
 
 export default Header;

@@ -4,8 +4,7 @@ import { redirect } from "next/navigation"
 import PhoneSVG from "../public/assets/images/call.svg"
 import ConfirmationCard from "./components/atoms/ConfirmationCard.jsx"
 import auth from "./firebase/firebase-config"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import FooterPartial from "./components/FooterPartial"
 
 const Page = () => {
   const [phoneNumber, setPhoneNumber] = useState("")
@@ -41,14 +40,13 @@ const Page = () => {
   }
   return (
     <>
-      <Header />
-      <ConfirmationCard
+      {/* <ConfirmationCard
         isVisible={isCardVisible}
         phoneNumber={phoneNumber}
         toggleVisibility={toggleCardVisibility}
-      />
-      <div className="hero flex justify-between xl:flex-row  max-xl:flex-col  max-xl:items-center  ">
-        <div className="dssams70072 mt-[4.5rem] hero_t1  max-xl:text-center">
+      /> */}
+      <div className="flex justify-between xl:flex-row  max-xl:flex-col  max-xl:items-center">
+        <div className="text-[72px] font-[700] leading-[94px] mt-[4.5rem]  max-xl:text-center">
           <span>
             SORUNSUZ <span className="text-[#FF6438]">TAŞIMA DENEYİMİNİZ </span>
             İÇİN
@@ -56,10 +54,12 @@ const Page = () => {
           <br />
           <span>BİRLİKTE ÇALIŞALIM</span>
         </div>
-        <div className="max-w-[24.875rem] rounded-2xl bg-[#1A1A1A] px-[1.875rem] pt-9 mt-[82px]  ">
+        <div className="max-w-[24.875rem] rounded-2xl bg-[#1A1A1A] px-[1.875rem] pt-9 mt-[82px]">
           <div>
-            <h4 className="dssams40018">Hoş geldiniz!</h4>
-            <h6 className="mt-[8px] dssams40014 opacity-50">
+            <h4 className="text-[18px] font-[400] leading-[23px] text-white">
+              Hoş geldiniz!
+            </h4>
+            <h6 className="mt-[8px] text-[14px] font-[400] leading-[18px] opacity-50">
               Buradan giriş yapabilir veya kayıt olabilirsiniz
             </h6>
           </div>
@@ -90,11 +90,11 @@ const Page = () => {
               onChange={handlePhoneNumberChange}
               onKeyDown={handleKeyDown}
               inputMode="numeric"
-              className="outline-none border-none bg-[#222222] dmsans40016 text-start ml-[60px]"
+              className="outline-none border-none bg-[#222222] text-[16px] font-[400] leading-[21px] text-start ml-[60px]"
             />
           </div>
           {isPhoneNumberError && (
-            <p className="error-message text-center dssams40014 opacity-50 mt-3">
+            <p className="error-message text-center text-[14px] font-[400] leading-[18px] opacity-50 mt-3">
               Lütfen telefon numaranızı giriniz
             </p>
           )}
@@ -107,49 +107,63 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="  bg-[#1A1A1A] rounded-2xl py-9 pl-8 mt-[4.5rem] mb-9">
-        <div>
-          <h4 className="dssams40018 !text-[#FF6438]">AVANTAJLAR</h4>
-          <p className="dmsams70023">NEDEN BİZİ SEÇMELİSİNİZ?</p>
-        </div>
-        <div className="flex gap-[0.938rem] flex-wrap justify-start mt-9 advantage_container ">
-          <div className="advantage_card !bg-[#FF6438] py-[31px] pl-[1.5rem] ">
-            <h4 className="dmsans70036 ">01</h4>
-            <p className="dmsans70026 mt-[8px]">Real time tracking</p>
-            <p className="dmsans50014 mt-2 !opacity-100">
+      <div className="bg-[#1A1A1A] rounded-3xl py-10 px-10 mt-[4.5rem] mb-9">
+        <h4 className="text-[16px] font-[400] leading-[21px] !text-[#FF6438]">
+          AVANTAJLAR
+        </h4>
+        <p className="text-[32px] font-[700] leading-[42px]">
+          NEDEN BİZİ SEÇMELİSİNİZ?
+        </p>
+        <div className="flex gap-[0.938rem] justify-evenly mt-9">
+          <div className="advantage_card !bg-[#FF6438] py-[31px] pl-[1.5rem] rounded-3xl">
+            <h4 className="text-[36px] font-[700] leading-[47px]">01</h4>
+            <p className="text-[20px] font-[700] leading-[26px] mt-[8px]">
+              Real time tracking
+            </p>
+            <p className="text-[14px] font-[500] leading-[18px] mt-2 !opacity-100">
               Tüm lojistik ihtiyaçlarınıza özel <br /> çözümler üretiyoruz
             </p>
           </div>
-          <div className="advantage_card  py-[31px] pl-[1.5rem] ">
-            <h4 className="dmsans70036 opacity-50">02</h4>
-            <p className="dmsans70026 mt-[8px]">Pick up delivery</p>
-            <p className="dmsans50014 mt-2 opacity-50">
+          <div className="advantage_card  py-[31px] pl-[1.5rem] rounded-3xl">
+            <h4 className="text-[36px] font-[700] leading-[47px] opacity-50">
+              02
+            </h4>
+            <p className="text-[20px] font-[700] leading-[26px] mt-[8px]">
+              Pick up delivery
+            </p>
+            <p className="text-[14px] font-[500] leading-[18px] mt-2 opacity-50">
               Tüm lojistik ihtiyaçlarınıza özel
               <br /> çözümler üretiyoruz
             </p>
           </div>
-          <div className="flex flex-wrap gap-[0.938rem] justify-center">
-            <div className="advantage_card  py-[31px] pl-[1.5rem] ">
-              <h4 className="dmsans70036 opacity-50">03</h4>
-              <p className="dmsans70026 mt-[8px]">24h online chat</p>
-              <p className="dmsans50014 mt-2 opacity-50">
-                Tüm lojistik ihtiyaçlarınıza özel
-                <br /> çözümler üretiyoruz
-              </p>
-            </div>
-            <div className="advantage_card  py-[31px] pl-[1.5rem]  ">
-              <h4 className="dmsans70036 opacity-50">04</h4>
-              <p className="dmsans70026 mt-[8px]">Mobile app GPS</p>
-              <p className="dmsans50014  mt-2 opacity-50">
-                Tüm lojistik ihtiyaçlarınıza özel <br />
-                çözümler üretiyoruz
-              </p>
-            </div>
+          <div className="advantage_card  py-[31px] pl-[1.5rem] rounded-3xl">
+            <h4 className="text-[36px] font-[700] leading-[47px] opacity-50">
+              03
+            </h4>
+            <p className="text-[20px] font-[700] leading-[26px] mt-[8px]">
+              24h online chat
+            </p>
+            <p className="text-[14px] font-[500] leading-[18px] mt-2 opacity-50">
+              Tüm lojistik ihtiyaçlarınıza özel
+              <br /> çözümler üretiyoruz
+            </p>
+          </div>
+          <div className="advantage_card py-[31px] pl-[1.5rem] rounded-3xl">
+            <h4 className="text-[36px] font-[700] leading-[47px] opacity-50">
+              04
+            </h4>
+            <p className="text-[20px] font-[700] leading-[26px] mt-[8px]">
+              Mobile app GPS
+            </p>
+            <p className="text-[14px] font-[500] leading-[18px] mt-2 opacity-50">
+              Tüm lojistik ihtiyaçlarınıza özel <br />
+              çözümler üretiyoruz
+            </p>
           </div>
         </div>
       </div>
       <div className="bg-[#1A1A1A] pt-9  pb-[49px] rounded-t-2xl">
-        <h1 className="text-center dmsans70048 mx-[1rem]">
+        <h1 className="text-center text-[48px] font-[700] leading-[62px] mx-[1rem]">
           LET US DELIVER YOUR <br /> PACKAGE TO ITS DESTINATION
         </h1>
 
@@ -158,7 +172,9 @@ const Page = () => {
           <button className="btn_secondary !w-[232px]">Uygulamayı indir</button>
         </div>
       </div>
-      <Footer />
+      <footer className="border-t border-solid border-[#2C2C2C] py-[36px] bg-[#1A1A1A] rounded-b-2xl flex justify-start pl-[2rem] gap-[9rem] text-[16px] font-[400] leading-[21px] footer_t1 mb-10">
+        <FooterPartial />
+      </footer>
     </>
   )
 }

@@ -49,12 +49,6 @@ select::-ms-expand {
 body {
   font-family: "DM Sans";
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 .header_button {
@@ -91,9 +85,6 @@ body {
 }
 .footer_t1 {
   font-family: "DM Sans";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 21px;
 }
 
 /* footer */
@@ -126,13 +117,6 @@ body {
   line-height: 16px;
 }
 
-.custom-background {
-  background: linear-gradient(0deg, #222222, #222222),
-    linear-gradient(0deg, #2c2c2c, #2c2c2c);
-  background-size: 50%, 50%;
-  background-position: 0% 0%, 100% 0%;
-  background-repeat: no-repeat;
-}
 .dmsans40016 {
   font-size: 16px;
   font-weight: 400;
@@ -149,38 +133,16 @@ body {
   font-weight: 500;
   line-height: 17px;
 }
-.dmsans40014 {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-}
-.dssams40014 {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-}
-.dssams40018 {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23px;
-
-  color: #ffffff;
-}
-
 .dssams70072 {
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 94px;
-
   @media (max-width: 880px) {
     font-size: 60px;
   }
 }
-.dmsams70023 {
+/* .dmsams70023 {
   font-size: 32px;
   font-weight: 700;
   line-height: 42px;
-}
+} */
 .btn_primary {
   width: 338px;
   height: 50px;
@@ -218,26 +180,26 @@ body {
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.8);
 }
 
-.dmsans70036 {
+/* .dmsans70036 {
   font-size: 36px;
   font-weight: 700;
   line-height: 47px;
-}
-.dmsans70048 {
+} */
+/* .dmsans70048 {
   font-size: 48px;
   font-weight: 700;
   line-height: 62px;
-}
-.dmsans70026 {
+} */
+/* .dmsans70026 {
   font-size: 20px;
   font-weight: 700;
   line-height: 26px;
-}
-.dmsans50014 {
+} */
+/* .dmsans50014 {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-}
+} */
 .dmsams50016 {
   font-size: 16px;
   font-weight: 500;
@@ -257,7 +219,6 @@ body {
 .advantage_card {
   width: 275px;
   height: 188px;
-  border-radius: 32px;
   cursor: pointer;
   background: #222222;
 }
@@ -265,12 +226,6 @@ body {
   transition: all 0.3s ease-in-out;
   transform: scale(1.03);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
-}
-.advantage_container {
-  @media (max-width: 1400px) {
-    justify-content: center;
-    padding-right: 32px;
-  }
 }
 
 .nav_button #nav-item {
