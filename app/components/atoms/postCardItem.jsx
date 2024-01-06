@@ -14,10 +14,10 @@ const postCardItem = (props) => {
     destination2,
     postDescription,
   } = props?.post?.post;
-  console.log(props.post.post);
+
   return (
-    <Link href={props.post.url || "onclik"}>
-      <div className="w-[170px] h-[273px] basis-[%20]">
+    <Link className=" " href={props.post.url || "onclik"}>
+      <div className="w-[170px] h-[273px]  ">
         <Image
           src={image}
           width={170}
@@ -38,7 +38,7 @@ const postCardItem = (props) => {
             </div>
           </div>
           <div className="mt-[10px]">
-            <p className="dmsans50014">{postDescription}</p>
+            <p className="dmsans50014 text-[14px]">{postDescription}</p>
             <p className="dmsans40013 opacity-50 mt-[6px]">
               {destination1}
               {" > "}

@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import HeaderIcon from "../../public/assets/images/truck.svg"
+import Image from "next/image";
+import Link from "next/link";
+import HeaderIcon from "../../public/assets/images/truck.svg";
 
 const Footer = () => {
   return (
@@ -61,7 +61,7 @@ const Footer = () => {
         </ul>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

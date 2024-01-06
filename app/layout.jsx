@@ -1,10 +1,10 @@
 // pages/layout.js
 
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api"
-import Header from "./components/Header"
-import FooterPartial from "./components/FooterPartial"
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import Header from "./components/Header";
+import FooterPartial from "./components/FooterPartial";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -21,12 +21,12 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className="pt-23px h-screen container flex flex-col mx-auto px-[3rem] bg-[#141414]">
+      <body className="pt-23px h-screen container flex flex-col mx-auto bg-[#141414]">
         <Header />
         <main className="items-center mt-8">
           <PrimeReactProvider>{children}</PrimeReactProvider>
         </main>
       </body>
     </html>
-  )
+  );
 }

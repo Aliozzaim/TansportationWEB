@@ -1,22 +1,22 @@
-"use client"
-import React, { use } from "react"
-import { useState, useEffect } from "react"
-import PostCardItem from "../components/atoms/postCardItem"
-import ArrowDown from "../../public/assets/images/Vector.png"
-import Image from "next/image"
-import CustomDropdown from "../components/atoms/DropDown.jsx"
+"use client";
+import React, { use } from "react";
+import { useState, useEffect } from "react";
+import PostCardItem from "../components/atoms/postCardItem";
+import ArrowDown from "../../public/assets/images/Vector.png";
+import Image from "next/image";
+import CustomDropdown from "../components/atoms/DropDown.jsx";
 const HomePage = () => {
   //feche posts data from api
 
-  const [posts, setPosts] = useState([])
-  const [selectedCity1, setSelectedCity1] = useState("") //nereden
-  const [selectedCity2, setSelectedCity2] = useState("") //nereye
-  const [sortType, setSortType] = useState("")
+  const [posts, setPosts] = useState([]);
+  const [selectedCity1, setSelectedCity1] = useState(""); //nereden
+  const [selectedCity2, setSelectedCity2] = useState(""); //nereye
+  const [sortType, setSortType] = useState("");
   const sortOptions = [
     { name: "Fiyat" },
     { name: "En ucuz" },
     { name: "Yorum Sayısına Göre" },
-  ]
+  ];
   const cities = [
     { name: "Adana" },
     { name: "Adıyaman" },
@@ -99,14 +99,14 @@ const HomePage = () => {
     { name: "Yalova" },
     { name: "Yozgat" },
     { name: "Zonguldak" },
-  ]
+  ];
 
   const dummyData = async () => {
     try {
       const response = await fetch(
         "https://picsum.photos/v2/list?page=1&limit=5"
-      )
-      const data = await response.json()
+      );
+      const data = await response.json();
 
       return data.map((item, index) => ({
         key: index + 1,
@@ -119,26 +119,26 @@ const HomePage = () => {
           destination1: "istanbul",
           destination2: "ankara",
         },
-      }))
+      }));
     } catch (error) {
-      console.error("Error fetching dummy data:", error)
-      return []
+      console.error("Error fetching dummy data:", error);
+      return [];
     }
-  }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await dummyData()
-        setPosts(data)
+        const data = await dummyData();
+        setPosts(data);
       } catch (error) {
-        console.error("Error setting posts:", error)
-        setPosts([])
+        console.error("Error setting posts:", error);
+        setPosts([]);
       }
-    }
+    };
 
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   if (selectedCity1 & selectedCity2) {
     //fech data acordingly to selected city
@@ -164,19 +164,19 @@ const HomePage = () => {
   //   fetchPosts();
   // }, []);
 
-  const sortedPosts = [...posts]
+  const sortedPosts = [...posts];
   if (sortType === "Fiyat") {
-    sortedPosts.sort((a, b) => b.post.price - a.post.price)
+    sortedPosts.sort((a, b) => b.post.price - a.post.price);
   } else if (sortType === "En ucuz") {
-    sortedPosts.sort((a, b) => a.post.price - b.post.price)
+    sortedPosts.sort((a, b) => a.post.price - b.post.price);
   } else if (sortType === "Yorum Sayısına Göre") {
-    sortedPosts.sort((a, b) => b.post.commentNumber - a.post.commentNumber)
+    sortedPosts.sort((a, b) => b.post.commentNumber - a.post.commentNumber);
   }
   return (
-    <div className="">
+    <div className="!w-full mb-[71px]">
       <div>
-        <p className="mb-[16px] text-xl font-[500]">Öne çıkan ilanlar</p>
-        <div className="flex flex-row flex-wrap justify-between gap-[14px] ">
+        <p className="mb-[16px] text-xl font-[500] ">Öne çıkan ilanlar</p>
+        <div className="flex flex-row flex-wrap justify-between  gap-[14px]  pr-[50px] ">
           {posts.map((post) => (
             <PostCardItem key={post.id} post={post} />
           ))}
@@ -185,10 +185,10 @@ const HomePage = () => {
       <div>
         <div className="mb-[16px]">
           <p className="mb-[16px] dmsans70024">Filtrele</p>
-          <div className="card flex justify-content-center gap-2 ">
+          <div className="card flex justify-content-center gap-2">
             <div className="relative">
               <select
-                className="h-[40px]  py-[11px] w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px] pr-4"
+                className="h-[40px]   w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px] pr-4"
                 value={sortType}
                 onChange={(e) => setSortType(e.target.value)}
               >
@@ -241,16 +241,13 @@ const HomePage = () => {
             </div>
             <div className="relative">
               <select
-                className="h-[40px] w-[117px] py-[11px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-start  rounded-[32px] pl-4"
+                className="h-[40px] w-[117px]  bg-[#222222] dmsans50014 text-white border-none outline-none    rounded-[32px] pl-4"
                 value={selectedCity1}
                 onChange={(e) => setSelectedCity1(e.target.value)}
               >
                 <option value="" disabled defaultValue>
                   Nereden
                 </option>
-                <div className="arrow-down">
-                  <Image src={ArrowDown} width={20} alt="ArrowDown" />
-                </div>
                 {cities.map((city) => (
                   <option
                     className=" dmsans50014 h-[40px]"
@@ -261,7 +258,7 @@ const HomePage = () => {
                   </option>
                 ))}
               </select>
-              <div className="arrow-down absolute top-1/2 right-[20px] transform -translate-y-1/2">
+              <div className="arrow-down absolute top-1/2 right-[10px] transform -translate-y-1/2">
                 <svg
                   width="20"
                   height="20"
@@ -297,7 +294,7 @@ const HomePage = () => {
                   </option>
                 ))}
               </select>
-              <div className="arrow-down absolute top-1/2 right-[16px] transform -translate-y-1/2">
+              <div className="arrow-down absolute top-1/2 right-[8px] transform -translate-y-1/2">
                 <svg
                   width="20"
                   height="20"
@@ -316,7 +313,14 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row flex-wrap justify-between gap-[14px]">
+        <div className="flex flex-row flex-wrap justify-between gap-[14px] pr-[50px] ">
+          {sortType === ""
+            ? posts.map((post) => <PostCardItem key={post.id} post={post} />)
+            : sortedPosts.map((post) => (
+                <PostCardItem key={post.id} post={post} />
+              ))}
+        </div>
+        <div className="flex flex-row flex-wrap justify-between gap-[14px] pr-[50px] ">
           {sortType === ""
             ? posts.map((post) => <PostCardItem key={post.id} post={post} />)
             : sortedPosts.map((post) => (
@@ -325,7 +329,7 @@ const HomePage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
