@@ -98,21 +98,6 @@ const Messages = () => {
       contentType: "text/plain",
       sentTime: new Date(2024, 0, 10, 12, 40), // Add sentTime for the third message
     },
-    // {
-    //   id: 5,
-    //   senderUser: { id: 1, name: "User1" },
-    //   content:
-    //     "Biyolojik faktörler tek başına kişilerin kendilerini kadın olarak görmesini veya kadın olarak görülmelerini sağlayan belirleyiciler değildirler. Bazı kadınlar anormal hormonal veya genetik farklılıklara sahip olabilirler (kongenital adrenal hiperplasia, kısmen veya tamamen androjen yoğunluğu sendromu veya diğer koşullar sebebiyle) ve hayatlarının ilk aşamalarında tipik dişi fizyolojisi...",
-    //   contentType: "application/pdf",
-    //   sentTime: new Date(2024, 0, 10, 12, 45), // Add sentTime for the fourth message
-    // },
-    // {
-    //   id: 6,
-    //   senderUser: { id: 2, name: "User2" },
-    //   content: "Biyolojik ",
-    //   contentType: "application/pdf",
-    //   sentTime: new Date(2024, 0, 10, 12, 50), // Add sentTime for the fifth message
-    // },
   ];
 
   return (
