@@ -27,38 +27,36 @@ const Header = () => {
   };
 
   return (
-    <>
-      <header className="bg-[#141414]  fixed z-[51] top-0 container">
-        <nav className="flex justify-between items-center mx-auto pr-[3rem] py-[1rem]">
-          <a href="/">
-            <Image src={headerICON} alt="header-icon" />
+    <header className="bg-[#141414] fixed z-50 top-0 mx-auto container pr-[6.1rem]">
+      <nav className="flex justify-between items-center py-[1rem]">
+        <a href="/">
+          <Image src={headerICON} alt="header-icon" />
+        </a>
+        <div className="flex gap-4">
+          <a
+            className="header_button"
+            href="https://play.google.com/store/games?device=windows"
+          >
+            <Image src={googleSVG} alt="google" />
+            <div className="header_content">
+              <div className="header_t1">Şimdi yükle</div>
+              <div className="header_t2">Google Play</div>
+            </div>
           </a>
-          <div className="flex gap-4">
-            <a
-              className="header_button"
-              href="https://play.google.com/store/games?device=windows"
-            >
-              <Image src={googleSVG} alt="google" />
-              <div className="header_content">
-                <div className="header_t1">Şimdi yükle</div>
-                <div className="header_t2">Google Play</div>
-              </div>
-            </a>
-            <a
-              className="header_button !w-[8.875rem]"
-              href="https://www.apple.com/tr/"
-            >
-              <Image src={appleSVG} alt="apple" />
-              <div>
-                <div className="header_t1">Şimdi yükle</div>
-                <div className="header_t2">App Store</div>
-              </div>
-            </a>
-          </div>
-        </nav>
-      </header>
-    </>
-  );
+          <a
+            className="header_button !w-[8.875rem]"
+            href="https://www.apple.com/tr/"
+          >
+            <Image src={appleSVG} alt="apple" />
+            <div>
+              <div className="header_t1">Şimdi yükle</div>
+              <div className="header_t2">App Store</div>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </header>
+  )
 };
 
 export default Header;

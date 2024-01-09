@@ -21,12 +21,12 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className="pt-23px h-screen container flex flex-col mx-auto bg-[#141414]">
+      <body className="pt-[23px] h-screen container flex flex-col mx-auto px-[3.05rem] bg-[#141414]">
         <Header />
         <main className="items-center mt-8">
           <PrimeReactProvider>{children}</PrimeReactProvider>
         </main>
       </body>
     </html>
-  );
+  )
 }
