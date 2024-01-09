@@ -13,7 +13,7 @@ const Offer = () => {
       .then((json) => setData(json))
   }, [])
   return (
-    <div className="bg-black-50 mx-auto my-0">
+    <div className="mx-auto">
       <h1 className="mb-[24px] dmsans70024">Teklifler</h1>
       <div className="flex flex-row  flex-wrap justify-start items-center gap-[21px]">
         {data.slice(0, 2).map((offer) => (

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import React from "react"
 import Chat from "@/components/Chat"
+import ChatInfoCard from "@/components/atoms/chatInfoCard"
 
 const Offer = () => {
   const [data, setData] = useState([])
@@ -13,12 +14,12 @@ const Offer = () => {
       .then((json) => setData(json))
   }, [])
   return (
-    <div className="bg-black-50 mx-auto my-0">
-      <h1 className="mb-[24px] dmsans70024">Mesajlar</h1>
-      <div className="flex flex-row  flex-wrap justify-start items-center gap-[21px]">
+    <>
+      <h1 className="dmsans70024">Mesajlar</h1>
+      <div className="flex flex-row flex-wrap justify-start items-center gap-[21px]">
         <Chat />
       </div>
-    </div>
+    </>
   )
 }
 

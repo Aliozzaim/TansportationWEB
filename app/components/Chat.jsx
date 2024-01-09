@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import auth, { db } from "../firebase/firebase-config"
-import ChatInfoCard from "./atoms/chatInfoCard"
+import Messages from "./Messages"
 import {
   collection,
   addDoc,
@@ -20,14 +20,9 @@ const Chat = ({ room }) => {
   const [newMessage, setNewMessage] = useState("")
 
   return (
-    <div>
-      <div>
-        <div>
-          <ChatInfoCard />
-        </div>
-        <div></div>
-      </div>
-    </div>
+    <>
+      <Messages />
+    </>
   )
 }
 export default Chat;

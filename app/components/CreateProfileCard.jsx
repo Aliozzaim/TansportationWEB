@@ -27,8 +27,10 @@ const CreateProfileCard = () => {
   };
 
   return (
-    <div className="card  !w-96 p-9 rounded-[36px] bg-[#1A1A1A] justify-items-center text-center mt-[52px] mb-[136px] mx-auto">
-      <h3 className="dmsans40016 text-[#FF6438]">Hoş geldiniz</h3>
+    <div className="card !w-96 p-9 rounded-[36px] bg-[#1A1A1A] justify-items-center text-center mt-[52px] mb-[136px] mx-auto">
+      <h3 className="font-[400] text-[16px] text-[#FF6438] pb-[10px]">
+        Hoş geldiniz
+      </h3>
       <h3 className="dmsans70024">Profil Oluştur</h3>
 
       <div className=" relative file-upload !w-24 !h-24 rounded-full   bg-[#222222] mx-auto mt-9 mb-6">
@@ -68,7 +70,7 @@ const CreateProfileCard = () => {
         </button>
       </div>
     </div>
-  );
+  )
 };
 
 export default CreateProfileCard;

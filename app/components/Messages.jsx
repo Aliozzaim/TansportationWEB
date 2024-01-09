@@ -1,23 +1,24 @@
-"use client";
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import ChatInfoCard from "./atoms/chatInfoCard.jsx";
-import Image from "next/image";
-import userImage from "../../public/assets/images/userImage.png";
-import ArrowRightSvg from "../../public/assets/images/arrow-right.svg";
-import MoreSVG from "../../public/assets/images/more.svg";
-import paperPlaneSVG from "../../public/assets/images/paper-plane.svg";
-import addSVG from "../../public/assets/images/add.svg";
+"use client"
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react"
+import ChatInfoCard from "./atoms/chatInfoCard.jsx"
+import Image from "next/image"
+import userImage from "../../public/assets/images/userImage.png"
+import ArrowRightSvg from "../../public/assets/images/arrow-right.svg"
+import MoreSVG from "../../public/assets/images/more.svg"
+import paperPlaneSVG from "../../public/assets/images/paper-plane.svg"
+import addSVG from "../../public/assets/images/add.svg"
+
 const Messages = () => {
-  const [messages, setMessages] = useState([]);
-  const [user, setUser] = useState({ id: 1, name: "User1" });
-  const [offer, setOffer] = useState("");
-  const [newMessage, setNewMessage] = useState("");
-  const [image, setImage] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [modalVisible, setModalVisible] = useState(false);
+  const [messages, setMessages] = useState([])
+  const [user, setUser] = useState({ id: 1, name: "User1" })
+  const [offer, setOffer] = useState("")
+  const [newMessage, setNewMessage] = useState("")
+  const [image, setImage] = useState(null)
+  const [selectedImage, setSelectedImage] = useState(null)
+  const [modalVisible, setModalVisible] = useState(false)
 
   const handleSendMessage = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if ((newMessage.trim() !== "" || image) && user) {
       const newMessageObject = {
@@ -27,40 +28,40 @@ const Messages = () => {
         image: image,
         contentType: image ? "image" : "text/plain",
         sentTime: new Date(),
-      };
+      }
 
-      setMessages([...messages, newMessageObject]);
-      setNewMessage("");
-      setImage(null);
+      setMessages([...messages, newMessageObject])
+      setNewMessage("")
+      setImage(null)
     }
-  };
+  }
 
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files[0]
     if (file) {
-      const reader = new FileReader();
+      const reader = new FileReader()
       reader.onloadend = () => {
-        setImage(reader.result);
-      };
-      reader.readAsDataURL(file);
+        setImage(reader.result)
+      }
+      reader.readAsDataURL(file)
     }
-  };
+  }
 
   const openImageModal = (selectedImageUrl) => {
-    setSelectedImage(selectedImageUrl);
-    setModalVisible(true);
-  };
+    setSelectedImage(selectedImageUrl)
+    setModalVisible(true)
+  }
 
   const closeImageModal = () => {
-    setSelectedImage(null);
-    setModalVisible(false);
-  };
+    setSelectedImage(null)
+    setModalVisible(false)
+  }
 
   const handleModalClick = (e) => {
     if (e.target.classList.contains("modal-overlay")) {
-      closeImageModal();
+      closeImageModal()
     }
-  };
+  }
   // Add other state variables as needed
 
   // Fetch the messages
@@ -74,8 +75,8 @@ const Messages = () => {
   // }, []);
 
   useEffect(() => {
-    setMessages(exampleMessages);
-  }, []);
+    setMessages(exampleMessages)
+  }, [])
   const exampleMessages = [
     {
       id: 1,
@@ -98,10 +99,10 @@ const Messages = () => {
       contentType: "text/plain",
       sentTime: new Date(2024, 0, 10, 12, 40), // Add sentTime for the third message
     },
-  ];
+  ]
 
   return (
-    <div className=" mb-[54px] mt-[60px]">
+    <>
       {/* Modal for displaying selected image */}
       {modalVisible && (
         <div
@@ -124,20 +125,10 @@ const Messages = () => {
           </div>
         </div>
       )}
-      <div>
-        <h1 className="dmsans70014">Mesajlar</h1>
-      </div>
-      <div className="flex gap-[31px]">
-        <div className="flex justify-start items-start gap-4">
-          <div className="bg-[#FF6438] max-w-[4px] h-[40px] rounded-[32px] block mt-[24px]">
-            {"."}
-          </div>
-          <ChatInfoCard />
-        </div>
-
-        <div className="w-[536px] rounded-[32px] h-[676px] bg-[#1A1A1A] pt-[32px]  ">
-          <div className="flex justify-between   border-b border-solid border-gray-700 px-9 pb-[22px]">
-            <div className="flex items-center gap-4  ">
+      <div className="flex">
+        <div className="w-[536px] rounded-[32px] h-[676px] bg-[#1A1A1A] pt-[32px]">
+          <div className="flex justify-between border-b border-solid border-gray-700 px-9 pb-[22px]">
+            <div className="flex items-center gap-4">
               <Image
                 className="rounded-full"
                 src={userImage}
@@ -155,7 +146,7 @@ const Messages = () => {
             ></Image>
           </div>
           <div className="">
-            <div className=" flex justify-between text-start px-9 border-b border-solid border-gray-700 px-9 py-[16px]   ">
+            <div className="flex justify-between text-start border-b border-solid border-gray-700 px-9 py-[16px]   ">
               <div>
                 <div className=" dmsans40014">
                   {offer?.description?.slice(0, 45) ||
@@ -188,7 +179,7 @@ const Messages = () => {
                   }`}
                   onClick={() => {
                     if (message.contentType === "image") {
-                      openImageModal(message.image);
+                      openImageModal(message.image)
                     }
                   }}
                 >
@@ -241,10 +232,10 @@ const Messages = () => {
             </div>
           </div>
           <div>
-            <div className="px-9    mt-[16px] ">
+            <div className="px-9 mt-[16px] ">
               <form
                 onSubmit={handleSendMessage}
-                className="flex justify-between gap-[19px] items-center"
+                className="flex justify-between items-center"
               >
                 <input
                   type="file"
@@ -274,7 +265,7 @@ const Messages = () => {
 
                 <input
                   onChange={(e) => setNewMessage(e.target.value)}
-                  className="dmsans40014 bg-[#2C2C2C] rounded-[32px] w-[370px] h-[55px] px-[16px] py-[10px] ml-[16px] outline-none "
+                  className="dmsans40014 bg-[#2C2C2C] rounded-[32px] w-[370px] h-[55px] px-[16px] py-[10px] ml-[16px] outline-none"
                   placeholder="Mesajınızı yazın..."
                 />
 
@@ -291,8 +282,8 @@ const Messages = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </>
+  )
+}
 
-export default Messages;
+export default Messages
