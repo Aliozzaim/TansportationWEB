@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#141414] fixed z-50 top-0 mx-auto container pr-[6.1rem]">
+    <header className="bg-[#141414] fixed z-50 top-0 mx-auto container pr-[4rem]">
       <nav className="flex justify-between items-center py-[1rem]">
         <a href="/">
           <Image src={headerICON} alt="header-icon" />

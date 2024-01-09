@@ -173,10 +173,10 @@ const HomePage = () => {
     sortedPosts.sort((a, b) => b.post.commentNumber - a.post.commentNumber);
   }
   return (
-    <div className="!w-full mb-[71px]">
+    <>
       <div>
-        <p className="mb-[16px] text-xl font-[500] ">Öne çıkan ilanlar</p>
-        <div className="flex flex-row flex-wrap justify-between  gap-[14px]  pr-[50px] ">
+        <p className="mb-[16px] text-xl font-[700] ">Öne çıkan ilanlar</p>
+        <div className="flex flex-row flex-wrap justify-start space-x-[15px]">
           {posts.map((post) => (
             <PostCardItem key={post.id} post={post} />
           ))}
@@ -188,7 +188,7 @@ const HomePage = () => {
           <div className="card flex justify-content-center gap-2">
             <div className="relative">
               <select
-                className="h-[40px]   w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px] pr-4"
+                className="h-[40px] w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px]"
                 value={sortType}
                 onChange={(e) => setSortType(e.target.value)}
               >
@@ -313,14 +313,14 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row flex-wrap justify-between gap-[14px] pr-[50px] ">
+        <div className="flex flex-row flex-wrap justify-between gap-[14px]">
           {sortType === ""
             ? posts.map((post) => <PostCardItem key={post.id} post={post} />)
             : sortedPosts.map((post) => (
                 <PostCardItem key={post.id} post={post} />
               ))}
         </div>
-        <div className="flex flex-row flex-wrap justify-between gap-[14px] pr-[50px] ">
+        <div className="flex flex-row flex-wrap justify-between gap-[14px]">
           {sortType === ""
             ? posts.map((post) => <PostCardItem key={post.id} post={post} />)
             : sortedPosts.map((post) => (
@@ -328,8 +328,8 @@ const HomePage = () => {
               ))}
         </div>
       </div>
-    </div>
-  );
+    </>
+  )
 };
 
 export default HomePage;

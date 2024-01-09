@@ -39,13 +39,13 @@ const SideNavigation = () => {
   //     });
   return (
     <>
-      <nav className="mt-[55px]   container left-30 z-50">
-        <ul className="w-[250px] h-[182px]  flex-col rounded-2xl bg-[#1C1C1C] ">
+      <nav className="mt-[55px] container left-0 z-50">
+        <ul className="w-[250px] h-[182px] flex-col rounded-2xl bg-[#1C1C1C]">
           <button
             onClick={() => handleLinkClick("/home")}
             className="flex justify-between items-center h-1/3 w-full nav_button px-5"
           >
-            <div className=" flex justify-between  gap-4 items-center align-middle !w-[174px]  ">
+            <div className="flex justify-between gap-4 items-center align-middle !w-[174px]">
               <svg
                 width="20"
                 height="20"
@@ -440,7 +440,7 @@ const SideNavigation = () => {
         </ul>
       </nav>
     </>
-  );
+  )
 };
 
 export default SideNavigation;

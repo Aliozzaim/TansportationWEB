@@ -1,27 +1,19 @@
-// pages/layout.js
-
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
-import Header from "./components/Header";
-import FooterPartial from "./components/FooterPartial";
+import { DM_Sans } from "next/font/google"
+const dmSansInit = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dmsans",
+})
+import "./globals.css"
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api"
+import Header from "./components/Header"
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Inter:wght@400;500;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-
-      <body className="pt-[23px] h-screen container flex flex-col mx-auto px-[3.05rem] bg-[#141414]">
+    <html lang="en" className={`${dmSansInit.variable}`}>
+      <head></head>
+      <body
+        className={`pt-[23px] h-screen container flex flex-col mx-auto px-[2rem] bg-[#141414] dmsans`}
+      >
         <Header />
         <main className="items-center mt-8">
           <PrimeReactProvider>{children}</PrimeReactProvider>
