@@ -5,7 +5,7 @@ import HeaderIcon from "../../public/assets/images/truck.svg";
 const Footer = () => {
   return (
     <>
-      <div className="">
+      <div>
         <a href="/">
           <Image src={HeaderIcon} alt="apple" />
         </a>
@@ -61,7 +61,7 @@ const Footer = () => {
         </ul>
       </div>
     </>
-  );
+  )
 };
 
 export default Footer;

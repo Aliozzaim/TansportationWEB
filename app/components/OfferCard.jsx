@@ -22,7 +22,7 @@ const OfferCard = (props) => {
   return (
     <div className="bg-[#1C1C1C] rounded-2xl  w-[397px]  h-[190px] pt-6 pl-6 pb-[26px]">
       <div
-        onClick={redirect("/chat")}
+        // onClick={redirect("/chat")}
         className="w-full flex flex-row  gap-4 justify-start items-start cursor-pointer "
       >
         <div className="min-w-[42px] bg-slate-800 rounded-lg">
@@ -43,7 +43,7 @@ const OfferCard = (props) => {
                 </p>
               </div>
             </div>
-            <div className="mx-[8px] self-end  pb-[4px]">
+            <div className="mx-[8px] self-end  pb-[10px]">
               <Image src={TripSVG} width={34} height={4} alt="tripSVG" />
             </div>
             <div className="flex flex-col  gap-1 mr-5">
@@ -84,7 +84,7 @@ const OfferCard = (props) => {
         </button>
       </div>
     </div>
-  );
+  )
 };
 
 export default OfferCard;

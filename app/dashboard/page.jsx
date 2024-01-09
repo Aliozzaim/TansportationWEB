@@ -185,10 +185,10 @@ const HomePage = () => {
       <div>
         <div className="mb-[16px]">
           <p className="mb-[16px] dmsans70024">Filtrele</p>
-          <div className="card flex justify-content-center gap-2">
+          <div className="card flex space-x-2 justify-content-center">
             <div className="relative">
               <select
-                className="h-[40px] w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px]"
+                className="h-[40px] w-[97px] bg-[#222222] dmsans50014 text-white border-none outline-none  text-end  rounded-[32px] px-4"
                 value={sortType}
                 onChange={(e) => setSortType(e.target.value)}
               >
@@ -215,7 +215,6 @@ const HomePage = () => {
                   width="20"
                   height="20"
                   viewBox="0 0 20 20"
-                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path

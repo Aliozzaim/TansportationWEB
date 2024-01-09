@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import React from "react"
-import OfferCard from "@/components/OfferCard.jsx"
+import Chat from "@/components/Chat"
 
 const Offer = () => {
   const [data, setData] = useState([])
@@ -14,11 +14,9 @@ const Offer = () => {
   }, [])
   return (
     <div className="bg-black-50 mx-auto my-0">
-      <h1 className="mb-[24px] dmsans70024">Teklifler</h1>
+      <h1 className="mb-[24px] dmsans70024">Mesajlar</h1>
       <div className="flex flex-row  flex-wrap justify-start items-center gap-[21px]">
-        {data.slice(0, 2).map((offer) => (
-          <OfferCard key={offer.id} {...offer} />
-        ))}
+        <Chat />
       </div>
     </div>
   )

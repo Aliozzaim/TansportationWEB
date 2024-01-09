@@ -39,8 +39,8 @@ const Header = () => {
           >
             <Image src={googleSVG} alt="google" />
             <div className="header_content">
-              <div className="header_t1">Şimdi yükle</div>
-              <div className="header_t2">Google Play</div>
+              <div className="header_t1 dmsans">Şimdi yükle</div>
+              <div className="header_t2 dmsans">Google Play</div>
             </div>
           </a>
           <a
@@ -49,8 +49,8 @@ const Header = () => {
           >
             <Image src={appleSVG} alt="apple" />
             <div>
-              <div className="header_t1">Şimdi yükle</div>
-              <div className="header_t2">App Store</div>
+              <div className="header_t1 dmsans">Şimdi yükle</div>
+              <div className="header_t2 dmsans">App Store</div>
             </div>
           </a>
         </div>
